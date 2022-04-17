@@ -32,20 +32,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
     'https://r.resimlink.com/ngBAKvSw2CD4.gif',
     'https://r.resimlink.com/jOn9M8Fi.jpg'
   ];
-  final companyImages = [
-    ["assets/images/Adidas.png", "caption1"],
-    ["assets/images/Armani.jpg", "caption2"],
-    ["assets/images/AVVA.png", "this is a big text"],
-    ["assets/images/Flo.png", "This is almost a bigger text"],
-    ["assets/images/Kigili.png", "oh no this a really really big text"],
-    ["assets/images/Lacoste.jpg", "yes small one"],
-    ["assets/images/Nike.png", "oh no this a really really big text"],
-    ["assets/images/Penti.jpg", "yes"],
-    ["assets/images/polo.jpg", "yes"],
-    ["assets/images/Reebok.png", "yes"],
-    ["assets/images/Under_Armour.jpg", "yes"],
-    ["assets/images/zara.jpg", "yes"],
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +113,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
                                       image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                          'assets/images/Lacoste.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -137,7 +123,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Lacoste',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -170,7 +156,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
                                       image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                          'assets/images/Kigili.png'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -180,7 +166,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Kiğılı',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -212,8 +198,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                             color: Colors.black45, width: 2),
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
-                                      image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                      image:
+                                          AssetImage('assets/images/AVVA.png'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -223,7 +209,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'AVVA',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -261,7 +247,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
                                       image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                          'assets/images/Adidas.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -271,7 +257,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Adidas',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -304,7 +290,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
                                       image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                          'assets/images/Under_Armour.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -314,7 +300,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Armour',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -346,8 +332,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                             color: Colors.black45, width: 2),
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
-                                      image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                      image:
+                                          AssetImage('assets/images/Nike.png'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -357,7 +343,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Nike',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -394,8 +380,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                             color: Colors.black45, width: 2),
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
-                                      image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                      image:
+                                          AssetImage('assets/images/Flo.png'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -405,7 +391,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Flo',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -437,8 +423,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                             color: Colors.black45, width: 2),
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
-                                      image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                      image:
+                                          AssetImage('assets/images/Penti.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -448,7 +434,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Penti',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -481,7 +467,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
                                       image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                          'assets/images/Armani.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -491,7 +477,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'Armani',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -528,8 +514,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                             color: Colors.black45, width: 2),
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
-                                      image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                      image:
+                                          AssetImage('assets/images/polo.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -539,7 +525,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'U.S Polo',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -571,8 +557,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                             color: Colors.black45, width: 2),
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
-                                      image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                      image:
+                                          AssetImage('assets/images/Zara.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -582,7 +568,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                     height: 6,
                                   ),
                                   Text(
-                                    'Reebok',
+                                    'ZARA',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),
@@ -595,7 +581,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 30, right: 30),
+                          padding: const EdgeInsets.only(
+                              top: 30, right: 30, bottom: 20),
                           child: Material(
                             elevation: 12,
                             borderRadius: BorderRadius.circular(13),
@@ -615,7 +602,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                         shape: BoxShape.rectangle),
                                     child: Ink.image(
                                       image: AssetImage(
-                                          'assets/images/Reebok.png'),
+                                          'assets/images/Reebok.jpg'),
                                       height: 55,
                                       width: 65,
                                       fit: BoxFit.fill,
@@ -852,7 +839,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
           effect: SlideEffect(
               dotWidth: 15, //trello
               dotHeight: 14,
-              spacing: 20,
+              spacing: 13,
               activeDotColor: Colors.blue.shade900,
               dotColor: Colors.black26),
         ),
