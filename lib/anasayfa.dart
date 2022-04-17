@@ -1,4 +1,5 @@
 import 'dart:async';
+
 //import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,20 @@ class _AnaSayfaState extends State<AnaSayfa> {
     'https://r.resimlink.com/bmcGI34qhs5.jpg',
     'https://r.resimlink.com/ngBAKvSw2CD4.gif',
     'https://r.resimlink.com/jOn9M8Fi.jpg'
+  ];
+  final companyImages = [
+    ["assets/images/Adidas.png", "caption1"],
+    ["assets/images/Armani.jpg", "caption2"],
+    ["assets/images/AVVA.png", "this is a big text"],
+    ["assets/images/Flo.png", "This is almost a bigger text"],
+    ["assets/images/Kigili.png", "oh no this a really really big text"],
+    ["assets/images/Lacoste.jpg", "yes small one"],
+    ["assets/images/Nike.png", "oh no this a really really big text"],
+    ["assets/images/Penti.jpg", "yes"],
+    ["assets/images/polo.jpg", "yes"],
+    ["assets/images/Reebok.png", "yes"],
+    ["assets/images/Under_Armour.jpg", "yes"],
+    ["assets/images/zara.jpg", "yes"],
   ];
 
   @override
@@ -84,6 +99,546 @@ class _AnaSayfaState extends State<AnaSayfa> {
                       height: 13,
                     ),
                     buildIndicator(),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Wrap(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, right: 50, left: 35),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 50),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 30),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Wrap(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, right: 50, left: 35),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 50),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 30),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Wrap(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, right: 50, left: 35),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 50),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 30),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Wrap(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, right: 50, left: 35),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 50),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30, right: 30),
+                          child: Material(
+                            elevation: 12,
+                            borderRadius: BorderRadius.circular(13),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.black12,
+                            child: InkWell(
+                              splashColor: Colors.black38,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            color: Colors.black45, width: 2),
+                                        shape: BoxShape.rectangle),
+                                    child: Ink.image(
+                                      image: AssetImage(
+                                          'assets/images/Reebok.png'),
+                                      height: 55,
+                                      width: 65,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    'Reebok',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
