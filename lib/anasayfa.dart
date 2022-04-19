@@ -4,6 +4,18 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:kloti_app/AVVA.dart';
+import 'package:kloti_app/Adidas.dart';
+import 'package:kloti_app/Armani.dart';
+import 'package:kloti_app/Armour.dart';
+import 'package:kloti_app/Flo.dart';
+import 'package:kloti_app/Kigili.dart';
+import 'package:kloti_app/Nike.dart';
+import 'package:kloti_app/Penti.dart';
+import 'package:kloti_app/Polo.dart';
+import 'package:kloti_app/Reebok.dart';
+import 'package:kloti_app/ZARA.dart';
+import 'package:kloti_app/lacoste.dart';
 //import 'package:kloti_app/directions_model.dart';
 //import 'package:kloti_app/main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -44,9 +56,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             backgroundColor: Colors.blue.shade900,
             title: Text('Kloti'),
             titleTextStyle: TextStyle(
-              color: Colors.cyan,
-              fontSize: 20,
-            ),
+                color: Colors.cyan, fontSize: 20, fontWeight: FontWeight.bold),
             centerTitle: true,
           ),
           body: Container(
@@ -101,7 +111,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Lacoste()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -144,7 +160,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Kigili()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -187,7 +209,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Avva()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -235,7 +263,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Adidas()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -278,7 +312,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Armour()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -321,7 +361,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Nike()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -369,7 +415,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Flo()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -412,7 +464,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Penti()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -455,7 +513,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Armani()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -503,7 +567,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Polo()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -546,7 +616,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Zara()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -590,7 +666,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
                             color: Colors.black12,
                             child: InkWell(
                               splashColor: Colors.black38,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Reebok()),
+                                );
+                              },
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
