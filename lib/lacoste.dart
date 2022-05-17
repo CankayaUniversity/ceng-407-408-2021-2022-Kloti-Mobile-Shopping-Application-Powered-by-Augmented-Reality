@@ -4,6 +4,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'package:kloti_app/Kigili.dart';
+import 'package:kloti_app/lacoste_erkek.dart';
+import 'package:kloti_app/lacostekadin.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Lacoste extends StatelessWidget {
@@ -61,6 +66,113 @@ class Lacoste extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 13,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Wrap(
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 80, right: 50, left: 35),
+                      child: Material(
+                        elevation: 12,
+                        borderRadius: BorderRadius.circular(13),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Colors.black12,
+                        child: InkWell(
+                          splashColor: Colors.white54,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LacosteKadin()),
+                            );
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                        color: Colors.white30, width: 2),
+                                    shape: BoxShape.rectangle),
+                                child: Ink.image(
+                                  image: AssetImage(
+                                      'assets/images/kadinlacoste.jpg'),
+                                  height: 140,
+                                  width: 105,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                'Kadın',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 80, right: 50),
+                      child: Material(
+                        elevation: 12,
+                        borderRadius: BorderRadius.circular(13),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Colors.black12,
+                        child: InkWell(
+                          splashColor: Colors.white54,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LacosteErkek()),
+                            );
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                        color: Colors.white12, width: 2),
+                                    shape: BoxShape.rectangle),
+                                child: Ink.image(
+                                  image: AssetImage(
+                                      'assets/images/erkeklacoste.jpg'),
+                                  height: 140,
+                                  width: 105,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                'Erkek',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
