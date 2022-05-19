@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Adidas extends StatelessWidget {
@@ -11,15 +11,13 @@ class Adidas extends StatelessWidget {
         //drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Colors.blue.shade900,
-          title: Text('Kloti'),
-          titleTextStyle: TextStyle(
+          title: const Text('Kloti'),
+          titleTextStyle: const TextStyle(
             color: Colors.cyan,
             fontSize: 20,
           ),
           centerTitle: true,
         ),
-        body: Container(
-          child: Text('Adidas Page'),
-        ));
+        body: const  Text('Adidas Page'));
   }
 }

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "182189255934",
+    "project_id": "kloti-login",
+    "storage_bucket": "kloti-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182189255934:android:bbb17f6620fbe740d189af",
+        "android_client_info": {
+          "package_name": "com.example.kloti_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182189255934-iotsijs1pm855h06b466n6fh7uuibojg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kloti_app",
+            "certificate_hash": "0e770d6987176597f3add685843ce93c36e307b5"
+          }
+        },
+        {
+          "client_id": "182189255934-2bbss03cjnijfrmo8q1purvshtmt741h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUNR6Fmk_qjFIVnD9vrxryV0iVhGuYIqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182189255934-2bbss03cjnijfrmo8q1purvshtmt741h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "182189255934-g018uj83vt43nl9iusrte8j69h11nlrt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.klotiApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

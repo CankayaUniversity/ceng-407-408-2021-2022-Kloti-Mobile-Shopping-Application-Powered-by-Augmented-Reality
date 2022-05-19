@@ -1,6 +1,4 @@
 import 'dart:async';
-
-//import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -10,29 +8,27 @@ import 'package:kloti_app/Armani.dart';
 import 'package:kloti_app/Armour.dart';
 import 'package:kloti_app/Flo.dart';
 import 'package:kloti_app/Kigili.dart';
-import 'package:kloti_app/Nike.dart';
 import 'package:kloti_app/Penti.dart';
 import 'package:kloti_app/Polo.dart';
 import 'package:kloti_app/Reebok.dart';
 import 'package:kloti_app/ZARA.dart';
 import 'package:kloti_app/lacoste.dart';
+import 'package:kloti_app/model/user_model.dart';
+import 'package:kloti_app/product_view_page.dart';
+import 'package:kloti_app/viewmodel/user_model.dart';
+import 'package:provider/provider.dart';
 //import 'package:kloti_app/directions_model.dart';
 //import 'package:kloti_app/main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'navigation_drawer_widget.dart';
 
 //import 'package:dio/dio.dart';
 
 //import 'navigation_drawer_widget.dart';
 
-class AnaSayfa extends StatefulWidget {
-  AnaSayfa({Key? key}) : super(key: key);
-
-  @override
-  _AnaSayfaState createState() => _AnaSayfaState();
-}
-
-class _AnaSayfaState extends State<AnaSayfa> {
-  Duration duration = Duration();
+class AnaSayfa extends StatelessWidget {
+    Duration duration = const Duration();
   Timer? timer;
 
   bool isCountdown = true;
@@ -44,6 +40,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
     'https://r.resimlink.com/ngBAKvSw2CD4.gif',
     'https://r.resimlink.com/jOn9M8Fi.jpg'
   ];
+  final UserM? user;
+  AnaSayfa({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +49,15 @@ class _AnaSayfaState extends State<AnaSayfa> {
       Center(
         child: Scaffold(
           //anasayfa
-          //drawer: NavigationDrawerWidget(),
+         // drawer: NavigationDrawerWidgett(userProvider:userProvider),
           appBar: AppBar(
+            actions:<Widget> [
+              ElevatedButton(onPressed:()=> _cikisYap(context), child: const Text('Çıkış Yap',style: TextStyle(color: Colors.white),),)
+            ],
             backgroundColor: Colors.blue.shade900,
-            title: Text('Kloti'),
-            titleTextStyle: TextStyle(
-                color: Colors.cyan, fontSize: 20, fontWeight: FontWeight.bold),
+            title: const  Text('Kloti'),
+            titleTextStyle: const  TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
             centerTitle: true,
           ),
           body: Container(
@@ -365,7 +366,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Nike()),
+                                      builder: (context) => const ProductViewPage()),
                                 );
                               },
                               child: Column(
@@ -843,7 +844,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.greenAccent.shade400,
+        unselectedItemColor: Colors.yellow,
         currentIndex: currentIndex,
         showUnselectedLabels: false,
         iconSize: 28,
@@ -854,14 +855,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
             label: 'Ana Sayfa',
             backgroundColor: Colors.blue.shade900,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.flag_rounded),
-            label: 'Aktivite Olustur',
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart,),
+            label: 'Sepetim',
             backgroundColor: Colors.brown,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.view_list),
-            label: 'Gecmiş Aktivitelerim',
+          const  BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Bildirimler',
             backgroundColor: Colors.green,
           ),
         ],
@@ -873,13 +874,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(4),
+            padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
                 color: Colors.orangeAccent.shade200,
                 borderRadius: BorderRadius.circular(10)),
             child: Text(
               time,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 fontSize: 29,
@@ -891,7 +892,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
           ),
           Text(
             header,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           )
         ],
       );
@@ -904,7 +905,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   Widget buildImage(String urlImage, int index) => ClipRRect(
         borderRadius: BorderRadius.circular(10.0),
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 3),
+          margin: const EdgeInsets.symmetric(horizontal: 3),
           color: Colors.grey.shade300,
           child: FadeInImage.assetNetwork(
             placeholder: 'assets/images/loading.gif',
@@ -926,4 +927,18 @@ class _AnaSayfaState extends State<AnaSayfa> {
               dotColor: Colors.black26),
         ),
       );
+
+  Future<bool?> _cikisYap(BuildContext context) async{
+  final _userModel=Provider.of<UserModel>(context,listen: false);
+   bool? sonuc= await _userModel.signOut();
+    return sonuc;
+  }
+
+  setState(int Function() param0) {}
+
+
 }
+
+
+
+

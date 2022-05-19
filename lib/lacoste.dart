@@ -1,15 +1,13 @@
 import 'dart:async';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:kloti_app/Kigili.dart';
 import 'package:kloti_app/lacoste_erkek.dart';
 import 'package:kloti_app/lacostekadin.dart';
 
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Lacoste extends StatelessWidget {
   Lacoste({Key? key}) : super(key: key);
