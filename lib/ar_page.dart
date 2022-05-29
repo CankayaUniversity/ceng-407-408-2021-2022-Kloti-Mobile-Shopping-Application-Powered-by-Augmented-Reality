@@ -1,69 +1,57 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
+import 'package:flutter/services.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-
-
-class ArPage extends StatelessWidget {
-  const ArPage({Key? key}) : super(key: key);
-
+class ArPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      
-      title: 'Flutter AR',
-      theme: ThemeData(
-        
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Kloti AR'),
-      
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  State<ArPage> createState() => _ArPageState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _ArPageState extends State<ArPage> {
   late ArCoreController arCoreController;
-  _onArCoreViewCreated(ArCoreController _arcoreController) {
-    arCoreController = _arcoreController;
-    _addSphere(arCoreController);
-  }
-
-  _addSphere(ArCoreController _arcoreController) {
-    final material = ArCoreMaterial(color: Colors.orangeAccent);
-    final sphere = ArCoreSphere(materials: [material], radius: 0.2);
-    final node = ArCoreNode(
-      shape: sphere, //ArCoreNode
-      position: vector.Vector3(0, -0.3, -1),
-    );
-
-    _arcoreController.addArCoreNode(node);
-  }
 
   @override
   void dispose() {
-    arCoreController.dispose();
+    // TODO: implement dispose
     super.dispose();
+    arCoreController.dispose();
+  }
+
+  void whenArCoreViewCreated(ArCoreController arCore) {
+    arCoreController = arCore;
+    arCoreController.onPlaneTap = controlOnPlaneTap;
+  }
+
+  void controlOnPlaneTap(List<ArCoreHitTestResult> hitsResults) {
+    final hit = hitsResults.first;
+    addCharacter(hit);
+  }
+
+  Future addCharacter(ArCoreHitTestResult hit) async {
+    final bytes =
+        (await rootBundle.load("assets/images/jean.png")).buffer.asUint8List();
+
+    final characterPos = ArCoreNode(
+      image: ArCoreImage(bytes: bytes, width: 550, height: 550),
+      position: hit.pose.translation + vector.Vector3(0.0, 0.20, 0.0),
+      rotation: hit.pose.rotation + vector.Vector4(0.0, 0.20, 0.0, 0.0),
+    );
+
+    arCoreController.addArCoreNode(characterPos);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Kloti AR"),
+        centerTitle: true,
       ),
       body: ArCoreView(
-        onArCoreViewCreated: _onArCoreViewCreated,
+        onArCoreViewCreated: whenArCoreViewCreated,
+        enableTapRecognizer: true,
       ),
     );
   }

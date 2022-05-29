@@ -28,7 +28,7 @@ import 'navigation_drawer_widget.dart';
 //import 'navigation_drawer_widget.dart';
 
 class AnaSayfa extends StatelessWidget {
-    Duration duration = const Duration();
+  Duration duration = const Duration();
   Timer? timer;
 
   bool isCountdown = true;
@@ -49,14 +49,20 @@ class AnaSayfa extends StatelessWidget {
       Center(
         child: Scaffold(
           //anasayfa
-         // drawer: NavigationDrawerWidgett(userProvider:userProvider),
+          // drawer: NavigationDrawerWidgett(userProvider:userProvider),
           appBar: AppBar(
-            actions:<Widget> [
-              ElevatedButton(onPressed:()=> _cikisYap(context), child: const Text('Çıkış Yap',style: TextStyle(color: Colors.white),),)
+            actions: <Widget>[
+              ElevatedButton(
+                onPressed: () => _cikisYap(context),
+                child: const Text(
+                  'Çıkış Yap',
+                  style: TextStyle(color: Colors.white),
+                ),
+              )
             ],
             backgroundColor: Colors.blue.shade900,
-            title: const  Text('Kloti'),
-            titleTextStyle: const  TextStyle(
+            title: const Text('Kloti'),
+            titleTextStyle: const TextStyle(
                 color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
             centerTitle: true,
           ),
@@ -165,7 +171,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Kigili()),
+                                      builder: (context) => Kigili()),
                                 );
                               },
                               child: Column(
@@ -214,7 +220,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Avva()),
+                                      builder: (context) => Avva()),
                                 );
                               },
                               child: Column(
@@ -268,7 +274,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Adidas()),
+                                      builder: (context) => Adidas()),
                                 );
                               },
                               child: Column(
@@ -317,7 +323,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Armour()),
+                                      builder: (context) => Armour()),
                                 );
                               },
                               child: Column(
@@ -366,7 +372,8 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const ProductViewPage()),
+                                      builder: (context) =>
+                                          const ProductViewPage()),
                                 );
                               },
                               child: Column(
@@ -420,7 +427,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Flo()),
+                                      builder: (context) =>  Flo()),
                                 );
                               },
                               child: Column(
@@ -469,7 +476,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Penti()),
+                                      builder: (context) =>  Penti()),
                                 );
                               },
                               child: Column(
@@ -518,7 +525,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Armani()),
+                                      builder: (context) => Armani()),
                                 );
                               },
                               child: Column(
@@ -572,7 +579,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Polo()),
+                                      builder: (context) =>  Polo()),
                                 );
                               },
                               child: Column(
@@ -621,7 +628,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Zara()),
+                                      builder: (context) => Zara()),
                                 );
                               },
                               child: Column(
@@ -671,7 +678,7 @@ class AnaSayfa extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Reebok()),
+                                      builder: (context) => Reebok()),
                                 );
                               },
                               child: Column(
@@ -856,11 +863,13 @@ class AnaSayfa extends StatelessWidget {
             backgroundColor: Colors.blue.shade900,
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart,),
+            icon: Icon(
+              Icons.shopping_cart,
+            ),
             label: 'Sepetim',
             backgroundColor: Colors.brown,
           ),
-          const  BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             label: 'Bildirimler',
             backgroundColor: Colors.green,
@@ -928,17 +937,11 @@ class AnaSayfa extends StatelessWidget {
         ),
       );
 
-  Future<bool?> _cikisYap(BuildContext context) async{
-  final _userModel=Provider.of<UserModel>(context,listen: false);
-   bool? sonuc= await _userModel.signOut();
+  Future<bool?> _cikisYap(BuildContext context) async {
+    final _userModel = Provider.of<UserModel>(context, listen: false);
+    bool? sonuc = await _userModel.signOut();
     return sonuc;
   }
 
   setState(int Function() param0) {}
-
-
 }
-
-
-
-
