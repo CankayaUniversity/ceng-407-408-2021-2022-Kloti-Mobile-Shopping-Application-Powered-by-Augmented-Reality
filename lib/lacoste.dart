@@ -134,7 +134,7 @@ class Lacoste extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const LacosteErkek()),
+                                  builder: (context) =>  LacosteErkek()),
                             );
                           },
                           child: Column(

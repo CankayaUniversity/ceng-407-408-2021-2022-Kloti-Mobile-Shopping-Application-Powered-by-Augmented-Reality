@@ -4,35 +4,21 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:kloti_app/lacoste/lacoste_aksesuar.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_alt.dart';
 import 'package:kloti_app/lacoste/lacoste_kadin_ayakkabi.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_ust.dart';
 
 import 'package:kloti_app/lacoste_erkek.dart';
 import 'package:kloti_app/lacostekadin.dart';
 
-class LacosteErkek extends StatelessWidget {
-  LacosteErkek({Key? key}) : super(key: key);
-  Duration duration = Duration();
-  Timer? timer;
+class lacosteKadinAyakkabi extends StatelessWidget {
+  lacosteKadinAyakkabi({Key? key}) : super(key: key);
 
-  bool isCountdown = true;
-  int currentIndex = 0;
-  int activeIndex = 0;
-
-  final urlImages = [
-    'https://r.resimlink.com/tIfnO.png',
-    'https://r.resimlink.com/onU8OehaR.jpg',
-    'https://r.resimlink.com/4Akt5Ijdp-H.jpg'
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
-        title: Text('Kloti'),
-        titleTextStyle: TextStyle(
+        title: const Text('Kloti'),
+        titleTextStyle: const TextStyle(
             color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         centerTitle: true,
       ),
@@ -47,36 +33,10 @@ class LacosteErkek extends StatelessWidget {
           children: [
             Column(
               children: [
-                CarouselSlider.builder(
-                  options: CarouselOptions(
-                    height: 215,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
-                    enlargeCenterPage: true,
-                    enlargeStrategy: CenterPageEnlargeStrategy.height,
-                    enableInfiniteScroll: true,
-                    pageSnapping: true,
-                    onPageChanged: (index, reason) =>
-                        setState(() => activeIndex = index),
-                  ),
-                  itemCount: urlImages.length,
-                  itemBuilder: (context, index, realIndex) {
-                    final urlImage = urlImages[index];
-                    return buildImage(urlImage, index);
-                  },
-                ),
-                const SizedBox(
-                  height: 13,
-                ),
-              ],
-            ),
-            Column(
-              children: [
                 Wrap(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, right: 30, left: 25),
+                      padding: const EdgeInsets.only(top: 5),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -85,11 +45,12 @@ class LacosteErkek extends StatelessWidget {
                         child: InkWell(
                           splashColor: Colors.white54,
                           onTap: () {
-                            Navigator.push(
+                            /* Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteKadinAyakkabi()),
-                            );
+                                  builder: (context) =>
+                                      const lacosteKadinAyakkabi()),
+                            );*/
                           },
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -105,22 +66,22 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'https://laco.akinoncdn.com/products/2022/02/17/170513/092184d7-7553-4e7e-9b7e-5ea1d442c360_size2000x2000_cropCenter.jpg',
+                                      'https://cdn-occ.akinon.net/products/2021/10/04/255962/29517327-47e7-4da9-bf6d-fa8ae96330f5_size780x780_quality100_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Ayakkabı',
+                              const Text(
+                                'Gripshot 120',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
-                                height: 6,
+                              const SizedBox(
+                                height: 10,
                               ),
                             ],
                           ),
@@ -128,8 +89,7 @@ class LacosteErkek extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, right: 30, left: 10),
+                      padding: const EdgeInsets.only(top: 5, left: 10),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -141,7 +101,7 @@ class LacosteErkek extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteKadinUst()),
+                                  builder: (context) => LacosteErkek()),
                             );
                           },
                           child: Column(
@@ -158,21 +118,21 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'http://www.dufy.com.tr/Uploads/UrunResimleri/buyuk/gri-ekose-erkek-dis-giyim---galvin-sn-sl-c73a.jpg',
+                                      'https://laco.akinoncdn.com/products/2022/03/07/170467/0e35ce78-5010-4834-a645-f1450a753e9b_size2000x2000_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Üst Giyim',
+                              const Text(
+                                'Lerond',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                             ],
@@ -185,8 +145,7 @@ class LacosteErkek extends StatelessWidget {
                 Wrap(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20, right: 30, left: 25),
+                      padding: const EdgeInsets.only(top: 5),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -195,11 +154,12 @@ class LacosteErkek extends StatelessWidget {
                         child: InkWell(
                           splashColor: Colors.white54,
                           onTap: () {
-                            Navigator.push(
+                            /* Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteKadinAlt()),
-                            );
+                                  builder: (context) =>
+                                      const lacosteKadinAyakkabi()),
+                            );*/
                           },
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -215,22 +175,22 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'https://img-lescon.mncdn.com/UPLOAD/URUNLER/thumb/21BTEB001204_633_1_small.jpg',
+                                      'https://cdn.exxeselection.com/lacoste-court-deri-bayan-ayakkabi-741sfa0076-1y9-2204020-27-B.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Alt Giyim',
+                              const Text(
+                                'Court',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
-                                height: 6,
+                              const SizedBox(
+                                height: 10,
                               ),
                             ],
                           ),
@@ -238,8 +198,7 @@ class LacosteErkek extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20, right: 30, left: 10),
+                      padding: const EdgeInsets.only(top: 5, left: 10),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -251,7 +210,7 @@ class LacosteErkek extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteAksesuar()),
+                                  builder: (context) => LacosteErkek()),
                             );
                           },
                           child: Column(
@@ -268,21 +227,130 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'https://laco.akinoncdn.com/products/2019/07/19/94429/187eab42-7247-4a7b-a286-4700e31e723d_size2000x2000_cropCenter.jpg',
+                                      'https://laco.akinoncdn.com/products/2021/08/11/157963/55a77039-6258-4642-8f6e-cff41672b938_size2000x2000_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Aksesuar',
+                              const Text(
+                                'L001',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Wrap(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Material(
+                        elevation: 12,
+                        borderRadius: BorderRadius.circular(13),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Colors.black12,
+                        child: InkWell(
+                          splashColor: Colors.white54,
+                          onTap: () {
+                            /* Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const lacosteKadinAyakkabi()),
+                            );*/
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                        color: Colors.white30, width: 2),
+                                    shape: BoxShape.rectangle),
+                                child: FadeInImage.assetNetwork(
+                                  placeholder: 'assets/images/loading2.gif',
+                                  placeholderFit: BoxFit.cover,
+                                  fadeOutDuration: Duration(seconds: 1),
+                                  image:
+                                      'https://laco.akinoncdn.com/products/2021/08/25/158532/385ff1e1-8597-46b2-8ec0-fd35516e654d_size2000x2000_cropCenter.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                                height: 200,
+                                width: 155,
+                              ),
+                              const SizedBox(
+                                height: 6,
+                              ),
+                              const Text(
+                                'Gripshot 0321',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5, left: 10),
+                      child: Material(
+                        elevation: 12,
+                        borderRadius: BorderRadius.circular(13),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Colors.black12,
+                        child: InkWell(
+                          splashColor: Colors.white54,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LacosteErkek()),
+                            );
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                        color: Colors.white30, width: 2),
+                                    shape: BoxShape.rectangle),
+                                child: FadeInImage.assetNetwork(
+                                  placeholder: 'assets/images/loading2.gif',
+                                  placeholderFit: BoxFit.cover,
+                                  fadeOutDuration: const Duration(seconds: 1),
+                                  image:
+                                      'https://laco.akinoncdn.com/products/2019/12/30/96595/350b566f-1b2a-44ed-ba99-27dd8980a1d5.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                                height: 200,
+                                width: 155,
+                              ),
+                              const SizedBox(
+                                height: 6,
+                              ),
+                              const Text(
+                                'Court Slam 319',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              const SizedBox(
                                 height: 10,
                               ),
                             ],
@@ -310,7 +378,7 @@ class LacosteErkek extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10)),
             child: Text(
               time,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 fontSize: 29,
@@ -322,28 +390,8 @@ class LacosteErkek extends StatelessWidget {
           ),
           Text(
             header,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           )
         ],
       );
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(IterableProperty<String>('urlImages', urlImages));
-  }
-
-  Widget buildImage(String urlImage, int index) => ClipRRect(
-        borderRadius: BorderRadius.circular(10.0),
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 3),
-          color: Colors.grey.shade300,
-          child: FadeInImage.assetNetwork(
-            placeholder: 'assets/images/loading.gif',
-            image: urlImage,
-            fit: BoxFit.fill,
-          ),
-        ),
-      );
-
-  setState(int Function() param0) {}
 }

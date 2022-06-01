@@ -4,35 +4,21 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:kloti_app/lacoste/lacoste_aksesuar.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_alt.dart';
 import 'package:kloti_app/lacoste/lacoste_kadin_ayakkabi.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_ust.dart';
 
 import 'package:kloti_app/lacoste_erkek.dart';
 import 'package:kloti_app/lacostekadin.dart';
 
-class LacosteErkek extends StatelessWidget {
-  LacosteErkek({Key? key}) : super(key: key);
-  Duration duration = Duration();
-  Timer? timer;
+class lacosteKadinUst extends StatelessWidget {
+  lacosteKadinUst({Key? key}) : super(key: key);
 
-  bool isCountdown = true;
-  int currentIndex = 0;
-  int activeIndex = 0;
-
-  final urlImages = [
-    'https://r.resimlink.com/tIfnO.png',
-    'https://r.resimlink.com/onU8OehaR.jpg',
-    'https://r.resimlink.com/4Akt5Ijdp-H.jpg'
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
-        title: Text('Kloti'),
-        titleTextStyle: TextStyle(
+        title: const Text('Kloti'),
+        titleTextStyle: const TextStyle(
             color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         centerTitle: true,
       ),
@@ -47,36 +33,10 @@ class LacosteErkek extends StatelessWidget {
           children: [
             Column(
               children: [
-                CarouselSlider.builder(
-                  options: CarouselOptions(
-                    height: 215,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
-                    enlargeCenterPage: true,
-                    enlargeStrategy: CenterPageEnlargeStrategy.height,
-                    enableInfiniteScroll: true,
-                    pageSnapping: true,
-                    onPageChanged: (index, reason) =>
-                        setState(() => activeIndex = index),
-                  ),
-                  itemCount: urlImages.length,
-                  itemBuilder: (context, index, realIndex) {
-                    final urlImage = urlImages[index];
-                    return buildImage(urlImage, index);
-                  },
-                ),
-                const SizedBox(
-                  height: 13,
-                ),
-              ],
-            ),
-            Column(
-              children: [
                 Wrap(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, right: 30, left: 25),
+                      padding: const EdgeInsets.only(top: 5),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -85,11 +45,12 @@ class LacosteErkek extends StatelessWidget {
                         child: InkWell(
                           splashColor: Colors.white54,
                           onTap: () {
-                            Navigator.push(
+                            /* Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteKadinAyakkabi()),
-                            );
+                                  builder: (context) =>
+                                      const lacosteKadinAyakkabi()),
+                            );*/
                           },
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -105,22 +66,22 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'https://laco.akinoncdn.com/products/2022/02/17/170513/092184d7-7553-4e7e-9b7e-5ea1d442c360_size2000x2000_cropCenter.jpg',
+                                      'https://laco.akinoncdn.com/products/2022/03/08/176741/99fe210f-aa5a-4810-a0fe-b22fb1081a03_size2000x2000_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Ayakkabı',
+                              const Text(
+                                'Relaxed Fit',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
-                                height: 6,
+                              const SizedBox(
+                                height: 10,
                               ),
                             ],
                           ),
@@ -128,8 +89,7 @@ class LacosteErkek extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, right: 30, left: 10),
+                      padding: const EdgeInsets.only(top: 5, left: 10),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -141,7 +101,7 @@ class LacosteErkek extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteKadinUst()),
+                                  builder: (context) => LacosteErkek()),
                             );
                           },
                           child: Column(
@@ -158,21 +118,21 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'http://www.dufy.com.tr/Uploads/UrunResimleri/buyuk/gri-ekose-erkek-dis-giyim---galvin-sn-sl-c73a.jpg',
+                                      'https://laco.akinoncdn.com/products/2021/08/27/52566/ef9c9afe-000f-41f5-9436-b3229bc227f0_size2000x2000_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Üst Giyim',
+                              const Text(
+                                ' Slim Fit V Yaka',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                             ],
@@ -185,8 +145,7 @@ class LacosteErkek extends StatelessWidget {
                 Wrap(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20, right: 30, left: 25),
+                      padding: const EdgeInsets.only(top: 5),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -195,11 +154,12 @@ class LacosteErkek extends StatelessWidget {
                         child: InkWell(
                           splashColor: Colors.white54,
                           onTap: () {
-                            Navigator.push(
+                            /* Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteKadinAlt()),
-                            );
+                                  builder: (context) =>
+                                      const lacosteKadinAyakkabi()),
+                            );*/
                           },
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -215,22 +175,22 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'https://img-lescon.mncdn.com/UPLOAD/URUNLER/thumb/21BTEB001204_633_1_small.jpg',
+                                      'https://laco.akinoncdn.com/products/2022/02/28/176981/e0dc88fd-39c1-4752-9268-68382f2df54b_size600x600_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Alt Giyim',
+                              const Text(
+                                'Yeşil T-shirt',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
-                                height: 6,
+                              const SizedBox(
+                                height: 10,
                               ),
                             ],
                           ),
@@ -238,8 +198,7 @@ class LacosteErkek extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20, right: 30, left: 10),
+                      padding: const EdgeInsets.only(top: 5, left: 10),
                       child: Material(
                         elevation: 12,
                         borderRadius: BorderRadius.circular(13),
@@ -251,7 +210,7 @@ class LacosteErkek extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => lacosteAksesuar()),
+                                  builder: (context) => LacosteErkek()),
                             );
                           },
                           child: Column(
@@ -268,21 +227,130 @@ class LacosteErkek extends StatelessWidget {
                                   placeholderFit: BoxFit.cover,
                                   fadeOutDuration: Duration(seconds: 1),
                                   image:
-                                      'https://laco.akinoncdn.com/products/2019/07/19/94429/187eab42-7247-4a7b-a286-4700e31e723d_size2000x2000_cropCenter.jpg',
+                                      'https://cdn-occ.akinon.net/products/2020/09/28/251745/e30e19d2-fa58-4c61-8c0c-c289e4371b9f_size780x780_quality100_cropCenter.jpg',
                                   fit: BoxFit.cover,
                                 ),
-                                height: 140,
-                                width: 130,
+                                height: 200,
+                                width: 155,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
-                              Text(
-                                'Aksesuar',
+                              const Text(
+                                'Bisiklet Yaka',
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              SizedBox(
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Wrap(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Material(
+                        elevation: 12,
+                        borderRadius: BorderRadius.circular(13),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Colors.black12,
+                        child: InkWell(
+                          splashColor: Colors.white54,
+                          onTap: () {
+                            /* Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const lacosteKadinAyakkabi()),
+                            );*/
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                        color: Colors.white30, width: 2),
+                                    shape: BoxShape.rectangle),
+                                child: FadeInImage.assetNetwork(
+                                  placeholder: 'assets/images/loading2.gif',
+                                  placeholderFit: BoxFit.cover,
+                                  fadeOutDuration: Duration(seconds: 1),
+                                  image:
+                                      'https://laco.akinoncdn.com/products/2021/04/28/147462/d999ed56-2319-45dc-9ab8-0a64f22bd132_size2000x2000_cropCenter.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                                height: 200,
+                                width: 155,
+                              ),
+                              const SizedBox(
+                                height: 6,
+                              ),
+                              const Text(
+                                'Lacivert Uzun Kol',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5, left: 10),
+                      child: Material(
+                        elevation: 12,
+                        borderRadius: BorderRadius.circular(13),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Colors.black12,
+                        child: InkWell(
+                          splashColor: Colors.white54,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LacosteErkek()),
+                            );
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                        color: Colors.white30, width: 2),
+                                    shape: BoxShape.rectangle),
+                                child: FadeInImage.assetNetwork(
+                                  placeholder: 'assets/images/loading2.gif',
+                                  placeholderFit: BoxFit.cover,
+                                  fadeOutDuration: Duration(seconds: 1),
+                                  image:
+                                      'https://cdn-occ.akinon.net/products/2020/07/29/247987/38443061-6203-46b0-a076-60f0463340a1_size780x780_quality100_cropCenter.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                                height: 200,
+                                width: 155,
+                              ),
+                              const SizedBox(
+                                height: 6,
+                              ),
+                              const Text(
+                                'Kırmızı T-Shirt',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              const SizedBox(
                                 height: 10,
                               ),
                             ],
@@ -310,7 +378,7 @@ class LacosteErkek extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10)),
             child: Text(
               time,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 fontSize: 29,
@@ -322,28 +390,8 @@ class LacosteErkek extends StatelessWidget {
           ),
           Text(
             header,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           )
         ],
       );
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(IterableProperty<String>('urlImages', urlImages));
-  }
-
-  Widget buildImage(String urlImage, int index) => ClipRRect(
-        borderRadius: BorderRadius.circular(10.0),
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 3),
-          color: Colors.grey.shade300,
-          child: FadeInImage.assetNetwork(
-            placeholder: 'assets/images/loading.gif',
-            image: urlImage,
-            fit: BoxFit.fill,
-          ),
-        ),
-      );
-
-  setState(int Function() param0) {}
 }
