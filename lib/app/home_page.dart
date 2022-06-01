@@ -264,7 +264,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Avva()),
+                                      builder: (context) => Avva()),
                                 );
                               },
                               child: Column(
@@ -318,7 +318,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Adidas()),
+                                      builder: (context) =>  Adidas()),
                                 );
                               },
                               child: Column(
@@ -367,7 +367,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Armour()),
+                                      builder: (context) =>  Armour()),
                                 );
                               },
                               child: Column(
@@ -470,7 +470,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Flo()),
+                                      builder: (context) =>  Flo()),
                                 );
                               },
                               child: Column(
@@ -519,7 +519,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Penti()),
+                                      builder: (context) =>  Penti()),
                                 );
                               },
                               child: Column(
@@ -622,7 +622,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Polo()),
+                                      builder: (context) =>  Polo()),
                                 );
                               },
                               child: Column(
@@ -671,7 +671,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Zara()),
+                                      builder: (context) =>  Zara()),
                                 );
                               },
                               child: Column(
@@ -721,7 +721,7 @@ Future<bool?> _cikisYap(BuildContext context) async{
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Reebok()),
+                                      builder: (context) =>  Reebok()),
                                 );
                               },
                               child: Column(

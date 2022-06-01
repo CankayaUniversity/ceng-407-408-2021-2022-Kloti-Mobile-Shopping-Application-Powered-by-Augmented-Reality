@@ -4,13 +4,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:kloti_app/lacoste/lacoste_aksesuar.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_alt.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_ayakkabi.dart';
-import 'package:kloti_app/lacoste/lacoste_kadin_ust.dart';
+import 'package:flutter_kloti/app/lacoste/lacoste_aksesuar.dart';
+import 'package:flutter_kloti/app/lacoste/lacoste_kadin_alt.dart';
+import 'package:flutter_kloti/app/lacoste/lacoste_kadin_ayakkabi.dart';
+import 'package:flutter_kloti/app/lacoste/lacoste_kadin_ust.dart';
 
-import 'package:kloti_app/lacoste_erkek.dart';
-import 'package:kloti_app/lacostekadin.dart';
 
 class LacosteKadin extends StatelessWidget {
   LacosteKadin({Key? key}) : super(key: key);

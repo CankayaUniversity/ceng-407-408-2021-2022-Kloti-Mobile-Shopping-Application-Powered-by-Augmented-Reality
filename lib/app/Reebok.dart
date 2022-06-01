@@ -4,9 +4,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_kloti/app/lacoste_erkek.dart';
+import 'package:flutter_kloti/app/lacostekadin.dart';
 
-import 'package:kloti_app/lacoste_erkek.dart';
-import 'package:kloti_app/lacostekadin.dart';
+
 
 class Reebok extends StatelessWidget {
   Reebok({Key? key}) : super(key: key);
