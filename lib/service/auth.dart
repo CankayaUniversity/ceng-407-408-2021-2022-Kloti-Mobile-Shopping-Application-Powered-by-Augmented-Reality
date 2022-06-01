@@ -10,19 +10,23 @@
    {
        var user = await auth.signInWithEmailAndPassword(email: email, password: password);
       return user.user;
+    
    }
      signOut() async{
       return await auth.signOut();
     }
     Future<User?> createCustomer(String firstName,String lastName,String email, int phoneNumber,String address,String password) async{
        var user= await auth.createUserWithEmailAndPassword(email: email, password: password);
-      await _firestore.collection('Customer')      .doc(user.user!.uid)
+      await _firestore.collection('Customer')
+      .doc(user.user!.uid)
        .set({
          'firstName' : firstName,
          'lastName' : lastName,
          'email' : email,
          'password' : password,
-         'phoneNumber' : phoneNumber,        'address' : address
+         'phoneNumber' : phoneNumber,  
+          
+          'address' : address
       });
        return user.user;
 }

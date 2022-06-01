@@ -25,7 +25,20 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      case TargetPlatform.windows:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      case TargetPlatform.linux:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for linux - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -34,39 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCJtswlLcJdAbj69oXXhWrll4_QHqnHZC0',
-    appId: '1:182189255934:web:0ccf335e53221a7fd189af',
-    messagingSenderId: '182189255934',
-    projectId: 'kloti-login',
-    authDomain: 'kloti-login.firebaseapp.com',
-    storageBucket: 'kloti-login.appspot.com',
+    apiKey: 'AIzaSyChm4C9GG-kbrQxNw_hT4fKB73qdsauGfg',
+    appId: '1:821553068744:web:162b5bebbd48042b5643fd',
+    messagingSenderId: '821553068744',
+    projectId: 'kloti-last',
+    authDomain: 'kloti-last.firebaseapp.com',
+    storageBucket: 'kloti-last.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBUNR6Fmk_qjFIVnD9vrxryV0iVhGuYIqw',
-    appId: '1:182189255934:android:bbb17f6620fbe740d189af',
-    messagingSenderId: '182189255934',
-    projectId: 'kloti-login',
-    storageBucket: 'kloti-login.appspot.com',
+    apiKey: 'AIzaSyCvVpEJIdLa3k1jhIf_fJX13InpBeGqiMw',
+    appId: '1:821553068744:android:4679f98623efd8bf5643fd',
+    messagingSenderId: '821553068744',
+    projectId: 'kloti-last',
+    storageBucket: 'kloti-last.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDEQcMNA8qQatJQYthArLFrSrnyrcZlzBs',
-    appId: '1:182189255934:ios:c829e2e99203dbb6d189af',
-    messagingSenderId: '182189255934',
-    projectId: 'kloti-login',
-    storageBucket: 'kloti-login.appspot.com',
-    iosClientId: '182189255934-g018uj83vt43nl9iusrte8j69h11nlrt.apps.googleusercontent.com',
-    iosBundleId: 'com.example.klotiApp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDEQcMNA8qQatJQYthArLFrSrnyrcZlzBs',
-    appId: '1:182189255934:ios:baa3544d1c93e72dd189af',
-    messagingSenderId: '182189255934',
-    projectId: 'kloti-login',
-    storageBucket: 'kloti-login.appspot.com',
-    iosClientId: '182189255934-hlgmfi73rfpal3utuvf2ricogfqtqfv8.apps.googleusercontent.com',
-    iosBundleId: '.com.lacin.kloti',
+    apiKey: 'AIzaSyCkx_pMCf-OPTM1RRtphwEnNZ_64DPBlfA',
+    appId: '1:821553068744:ios:86185e9877dc88925643fd',
+    messagingSenderId: '821553068744',
+    projectId: 'kloti-last',
+    storageBucket: 'kloti-last.appspot.com',
+    iosClientId: '821553068744-ld2t81etqilosthai96qu98udkef43mq.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterKloti',
   );
 }

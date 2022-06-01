@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(kloti_app LANGUAGES CXX)
+project(flutter_kloti LANGUAGES CXX)
 
-set(BINARY_NAME "kloti_app")
+set(BINARY_NAME "flutter_kloti")
 
 cmake_policy(SET CMP0063 NEW)
 

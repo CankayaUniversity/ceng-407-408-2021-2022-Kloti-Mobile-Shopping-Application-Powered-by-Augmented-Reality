@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# ceng-407-408-2021-2022-Kloti-Mobile-Shopping-Application-Powered-by-Augmented-Reality
-Kloti: Mobile Shopping Application Powered by Augmented Reality
-=======
-# kloti_app
+# flutter_kloti
 
 A new Flutter project.
 
@@ -18,4 +14,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
->>>>>>> ecb2aaf (first commit)

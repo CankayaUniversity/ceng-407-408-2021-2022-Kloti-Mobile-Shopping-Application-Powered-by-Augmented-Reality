@@ -1,6 +1,6 @@
 {
-    "name": "kloti_app",
-    "short_name": "kloti_app",
+    "name": "flutter_kloti",
+    "short_name": "flutter_kloti",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
