@@ -6,7 +6,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kloti/app/lacoste_erkek.dart';
 
-
 class lacosteAksesuar extends StatelessWidget {
   lacosteAksesuar({Key? key}) : super(key: key);
 

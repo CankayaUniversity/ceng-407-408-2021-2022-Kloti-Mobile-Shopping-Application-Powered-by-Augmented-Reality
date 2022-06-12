@@ -6,12 +6,12 @@ import 'package:vector_math/vector_math_64.dart' as vector;
 
 int i = 0;
 
-class ArPage extends StatefulWidget {
+class ArPage2 extends StatefulWidget {
   @override
-  State<ArPage> createState() => _ArPageState();
+  State<ArPage2> createState() => _ArPageState();
 }
 
-class _ArPageState extends State<ArPage> {
+class _ArPageState extends State<ArPage2> {
   late ArCoreController arCoreController;
 
   @override
@@ -32,13 +32,13 @@ class _ArPageState extends State<ArPage> {
   }
 
   Future addCharacter(ArCoreHitTestResult hit) async {
-    final bytes = (await rootBundle.load("assets/images/lacoste_kazak.png"))
+    final bytes = (await rootBundle.load("assets/images/lacoste_esofman.png"))
         .buffer
         .asUint8List();
 
     final characterPos = ArCoreNode(
-      image: ArCoreImage(bytes: bytes, width: 550, height: 550),
-      position: hit.pose.translation + vector.Vector3(0.0, 0.50, 0.0),
+      image: ArCoreImage(bytes: bytes, width: 700, height: 560),
+      position: hit.pose.translation + vector.Vector3(0.0, 0.35, 0.0),
       rotation: hit.pose.rotation + vector.Vector4(0.0, 0.0, 0.0, 0.0),
     );
 
