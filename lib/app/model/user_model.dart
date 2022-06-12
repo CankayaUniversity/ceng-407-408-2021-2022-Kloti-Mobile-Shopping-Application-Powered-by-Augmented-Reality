@@ -5,10 +5,11 @@ class UserM {
   String? lastName;
   String? address;
   String? phoneNumber;
-  String? profilURL;
+  
+ 
 
   
-  UserM({this.uid,this.email,this.firstName,this.lastName,this.address,this.phoneNumber, this.profilURL});
+  UserM({this.uid,this.email,this.firstName,this.lastName,this.address,this.phoneNumber});
   factory UserM.fromMap(map){
     return UserM(
       uid: map['uid'],
@@ -17,7 +18,7 @@ class UserM {
       lastName: map['lastName'],
       address: map['address'],
       phoneNumber: map['phoneNumber'],
-      profilURL: map['profilURL'] ?? "https://isobarscience.com/default-profile-picture1/",
+    
 
     );
   }
@@ -29,7 +30,7 @@ class UserM {
       'lastName': lastName,
       'address':address,
       'phoneNumber':phoneNumber,
-      'profilURL': profilURL,
+    
     };
   }
 

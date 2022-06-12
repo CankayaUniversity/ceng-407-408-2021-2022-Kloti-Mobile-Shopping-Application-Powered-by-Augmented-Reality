@@ -31,12 +31,12 @@ class _ArPageState extends State<ArPage> {
 
   Future addCharacter(ArCoreHitTestResult hit) async {
     final bytes =
-        (await rootBundle.load("assets/images/jean.png")).buffer.asUint8List();
+        (await rootBundle.load("assets/images/nike_tshirt.png")).buffer.asUint8List();
 
     final characterPos = ArCoreNode(
       image: ArCoreImage(bytes: bytes, width: 550, height: 550),
-      position: hit.pose.translation + vector.Vector3(0.0, 0.20, 0.0),
-      rotation: hit.pose.rotation + vector.Vector4(0.0, 0.20, 0.0, 0.0),
+      position: hit.pose.translation + vector.Vector3(0.0, 0.50, 0.5),
+      rotation: hit.pose.rotation + vector.Vector4(0.0, 0.0, 0.0, 0.0),
     );
 
     arCoreController.addArCoreNode(characterPos);

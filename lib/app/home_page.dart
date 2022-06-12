@@ -48,9 +48,9 @@ class _AnaSayfaState extends State<AnaSayfa> {
 
 
   final urlImages = [
-    'https://r.resimlink.com/bmcGI34qhs5.jpg',
-    'https://r.resimlink.com/ngBAKvSw2CD4.gif',
-    'https://r.resimlink.com/jOn9M8Fi.jpg'
+    'https://cdn.sporthink.com.tr/UserFiles/FCK/image/haftan%C4%B1n_f%C4%B1rsatlar%C4%B1_kampanya_2.gif',
+    'https://cdn.dribbble.com/users/811438/screenshots/13971582/media/d783e8d1037caa073d87c3b29580db3c.gif',
+    'https://www.tchibo.com.tr/newmedia/page/img/128ec5597989451d/image_match.gif'
   ];
 
 Future<bool?> _cikisYap(BuildContext context) async{

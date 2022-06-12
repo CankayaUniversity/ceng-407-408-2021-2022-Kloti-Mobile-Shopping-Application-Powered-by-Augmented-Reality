@@ -1,11 +1,14 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kloti/app/model/user_model.dart';
+import 'package:flutter_kloti/app/show_images.dart';
 import 'package:image_picker/image_picker.dart';
 class ProfilPage extends StatefulWidget {
-  const ProfilPage({Key? key}) : super(key: key);
+  UserM loggedInUser =UserM();
+   ProfilPage({Key? key,required this.loggedInUser}) : super(key: key);
 
  
      
@@ -14,42 +17,52 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPageState extends State<ProfilPage> {
-   final TextEditingController _emailController=TextEditingController();
-    File? _profilFoto;
-   final  _picker = ImagePicker();
+    final TextEditingController _emailController=TextEditingController();
+  
+    File? _image;
+  final imagePicker =ImagePicker();
+  String? downloadURL;
   
    User? user=FirebaseAuth.instance.currentUser;
-    UserM loggedInUser =UserM();
+  
+  showSnackBar(String snacktext,Duration d)
+  {
+    final snackBar=SnackBar(content: Text(snacktext),duration: d);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+  Future uploadImage() async{
+    FirebaseFirestore firebaseFirestore=FirebaseFirestore.instance;
+    final postID= DateTime.now().millisecondsSinceEpoch.toString();
+    Reference ref=FirebaseStorage.instance.ref().child("${widget.loggedInUser.uid}/images").child("post_$postID");
+    await ref.putFile(_image!);
+    downloadURL=await ref.getDownloadURL();
+    print(downloadURL);
 
-
-   @override
-   void initState() {
-     super.initState();
-     FirebaseFirestore.instance
-     .collection("users")
-     .doc(user!.uid)
-     .get()
-     .then((value){
-      loggedInUser=UserM.fromMap(value.data());
-       setState(() {   
-       });
-     });
-     
-   }
+  await firebaseFirestore.collection("users").doc(widget.loggedInUser.uid).collection("images").add({'profilURL':downloadURL}).whenComplete(() => showSnackBar("Fotoğraf değiştirme başarılı :)", const Duration(seconds: 2)));
+   
+  }
+/* 
   
   void _kameradanFotoCek() async{
-    var _yeniResim =await _picker.pickImage(source: ImageSource.camera);
+   final pick =await imagePicker.pickImage(source: ImageSource.camera);
     Navigator.of(context).pop();
     setState(() {
-       _profilFoto=_yeniResim as File ;
+       _image=pick as File ;
     });
-  }
+  } */
 
   void _galeridenResimSec() async{
-     var _yeniResim =await _picker.pickImage(source: ImageSource.gallery);
+   final pick =await imagePicker.pickImage(source: ImageSource.gallery);
      Navigator.of(context).pop();
     setState(() {
-       _profilFoto=_yeniResim as File ;
+      if(pick!=null)
+      {
+        _image=File(pick.path);
+      }
+      else{
+        showSnackBar("Dosya seçilmedi",const  Duration(microseconds: 400));
+      }
+    
     });
   }
       
@@ -81,17 +94,10 @@ class _ProfilPageState extends State<ProfilPage> {
                   onTap: (){
                     showModalBottomSheet(context: context, builder: (context){
                       return Container(
-                        height: 160,
+                        height: 230,
                         child: Column(
                           children:  [
-                              ListTile(
-                                leading: const Icon(Icons.camera),
-                                title: const Text("Kameradan Çek"),
-                                onTap: (){
-                                    _kameradanFotoCek();
-                                },
-                                
-                                ),
+                             
                                 ListTile(
                                 leading: const Icon(Icons.image),
                                 title: const Text("Galeriden seç"),
@@ -100,16 +106,53 @@ class _ProfilPageState extends State<ProfilPage> {
                                 },
                                 
                                 ),
+                                 ListTile(
+                                leading: const Icon(Icons.image),
+                                title: const Text("Fotoğrafı yükle"),
+                                onTap: (){
+                                  if(_image!=null)
+                                  {
+                                  uploadImage();
+                                  }
+                                  else{
+                                    showSnackBar("Önce fotoğraf seçin", const Duration(milliseconds: 400));
+                                  }
+                               
+                                },
+                                
+                                ),
+                                 ListTile(
+                                leading: const Icon(Icons.image),
+                                title: const Text("Fotoğrafı göster"),
+                                onTap: (){
+                                   Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShowUploads(userId: widget.loggedInUser.uid)),
+                      );
+                                },
+                                
+                                ),
+                                
                           ],
                         ),
                       );
                     });
                   },
-                  child: CircleAvatar(
+                  child:   CircleAvatar(
                     radius: 75,
-                    backgroundColor: Colors.transparent,
-                    /*  backgroundImage:
-                    NetworkImage("${loggedInUser.profilURL}"), */
+                    backgroundColor: Colors.blue.shade300,
+                     child : _image==null ?const  Padding(
+                       padding:  EdgeInsets.all(2.0),
+                       child:  Center(child: Text("Fotoğraf seçilmedi.Seçmek için tıkla"),),
+                     )
+                     :    ClipOval(child: Image.file(_image!,alignment: Alignment.center,fit: BoxFit.cover,)),
+                    
+                  
+                 
+                  
+                    
+                  
                    
                   ),
                 ),
@@ -118,10 +161,9 @@ class _ProfilPageState extends State<ProfilPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   controller: _emailController,
-            
                   decoration:  InputDecoration(
                     labelText: "Emailiniz",
-                    hintText: "${loggedInUser.email}",
+                    hintText: "${widget.loggedInUser.email}",
                     border: OutlineInputBorder(),
                     
                     ),
@@ -130,7 +172,12 @@ class _ProfilPageState extends State<ProfilPage> {
             
               ElevatedButton(
                 onPressed: (){
-              //      _emailGuncelle(context);
+                  if(_image!=null)
+                  {
+                    uploadImage(); //Seçilen fotoyu Database e yükler
+                    uploadEmail();
+                  }
+             
 
                 },
                 
@@ -152,41 +199,17 @@ class _ProfilPageState extends State<ProfilPage> {
       ),
       ),
     );
+   
   }
 
-  /* void _emailGuncelle(BuildContext context) async{
-    //  final  _userModel=Provider.of<UserModel>(context);
-      if(_userModel.user!.email!=_controllerEmail.text)
-      { 
-        var updateResult=await  _userModel.updateEmail(_userModel.user!.userID,_controllerEmail.text);
-        if(updateResult==true)
-        {
-         
-           const  PlatformDuyarliAlertDialog(
-        baslik: "Başarılı",
-        icerik: "Email değiştirildi",
-        anaButonYazisi: "Tamam",
-    );
-        }
-        else{
-          _controllerEmail.text=_userModel.user!.email;
-           const  PlatformDuyarliAlertDialog(
-        baslik: "Başarısız",
-        icerik: "Email zaten kullanımda,farklı bir email deneyiniz.",
-        anaButonYazisi: "Tamam",
-    );
-        }
-  }
-  else{
-   const  PlatformDuyarliAlertDialog(
-        baslik: "Hata",
-        icerik: "Email değişikliği yapmadınız",
-        anaButonYazisi: "Tamam",
-    );
-  }
-      }
+  void uploadEmail() async{
+    FirebaseFirestore firebaseFirestore=FirebaseFirestore.instance;
 
-      */
+
+  await firebaseFirestore.collection("users").doc(widget.loggedInUser.uid).update({'email':_emailController.text}).whenComplete(() => showSnackBar("Email değiştirme başarılı :)", const Duration(seconds: 2)));
+   
+  }
+
   
  
 

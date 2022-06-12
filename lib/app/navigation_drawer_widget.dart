@@ -22,6 +22,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
    User? user=FirebaseAuth.instance.currentUser;
     final _googleSignIn =GoogleSignIn();
+
      GoogleSignInAccount? googleSignInAccount;
    UserM loggedInUser =UserM();
 
@@ -42,7 +43,6 @@ import 'package:google_sign_in/google_sign_in.dart';
    }
   String? uid,email,fName,lName,profilUrl;
 
-
   
    @override
    Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ import 'package:google_sign_in/google_sign_in.dart';
                    backgroundColor: Colors.white,
                    child: CircleAvatar(
                      backgroundColor: Colors.blue,
-                    // backgroundImage: ,
+                    
                     
                    ),
                 ),               const  SizedBox(
@@ -105,7 +105,7 @@ import 'package:google_sign_in/google_sign_in.dart';
                leading:  const Icon(Icons.person,color:Colors.white),
                onTap: (){
                  
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilPage()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>  ProfilPage(loggedInUser: loggedInUser,)),);
                },
               
              ), 

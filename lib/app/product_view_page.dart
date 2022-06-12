@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kloti/app/ar_page.dart';
 import 'package:flutter_kloti/app/shoppingcard.dart';
+import 'package:flutter_kloti/shopping/shoppingcardpage.dart';
 
 
 void main() => runApp(const ProductViewPage());
@@ -83,7 +84,7 @@ class ProductViewPage extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                ShoppingCard()),
+                                                CartScreen()),
                                       );
                                     },
                                     style: ElevatedButton.styleFrom(
