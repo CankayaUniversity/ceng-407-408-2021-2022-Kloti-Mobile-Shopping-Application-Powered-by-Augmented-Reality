@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kloti/app/ar_page.dart';
+import 'package:flutter_kloti/app/ar_page2.dart';
 import 'package:flutter_kloti/app/shoppingcard.dart';
 import 'package:flutter_kloti/shopping/shoppingcardpage.dart';
 
-void main() => runApp(const ProductViewPage());
+void main() => runApp(const ProductViewPage2());
 
-class ProductViewPage extends StatelessWidget {
-  const ProductViewPage({Key? key}) : super(key: key);
+class ProductViewPage2 extends StatelessWidget {
+  const ProductViewPage2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -79,11 +80,11 @@ class ProductViewPage extends StatelessWidget {
                                   height: 40,
                                   child: ElevatedButton(
                                     onPressed: () {
-                                      /*Navigator.push(
+                                      Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) => CartScreen()),
-                                      );*/
+                                      );
                                     },
                                     style: ElevatedButton.styleFrom(
                                         shape: RoundedRectangleBorder(
@@ -111,7 +112,7 @@ class ProductViewPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Lacoste Kazak',
+                          'Eşofman Altı',
                           style: TextStyle(color: Colors.white),
                         ),
                         Text(
@@ -134,7 +135,7 @@ class ProductViewPage extends StatelessWidget {
                                 children: [
                                   TextSpan(text: 'Fiyat\n'),
                                   TextSpan(
-                                    text: '4.269 TL',
+                                    text: '849,00 TL',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -152,7 +153,7 @@ class ProductViewPage extends StatelessWidget {
                             ),
                             Expanded(
                               child: Image.network(
-                                'https://laco.akinoncdn.com/products/2022/01/28/164935/603c1520-644f-4e39-8e31-f629b1a0c7cc_size2000x2000_cropCenter.jpg',
+                                'https://cdn-occ.akinon.net/products/2020/02/21/171343/018195d7-6c22-4eae-8ae5-2da4352387a8.jpg',
                                 fit: BoxFit.fitWidth,
                               ),
                             ),
@@ -188,7 +189,7 @@ class CounterWithFavBtn extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ArPage()),
+                MaterialPageRoute(builder: (context) => ArPage2()),
               );
             },
             /*  async{
@@ -226,7 +227,7 @@ class Description extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 20),
       child: Text(
-        '%100 Kaşmir\n*Classic Fit\n*Bisiklet Yaka\n*Modelin Bilgileri; Boy: 188 cm\n*Modelin Giydiği Beden: 4-M\nŞıklığı herkese hitap eden erkek kazakları, bu sezon da şehir tarzını göstermek isteyenlerin gardırobunda yer alacak. Dikkat çekici ve her tarza uygun Lacoste kazakları chino pantolon ve ayakkıblarla kombinleyebilirsiniz.',
+        'Lacoste Sport Çocuk Gri Eşofman Altı %69 Pamuk %31 Polyester.Ayarlanabilir Büzgü İpli Bel ve Yan Cepler Hafif ve rahat yapısıyla çocukların vazgeçilmezi olan Lacoste Çocuk eşofman altları genç şampiyonlar tarafından tercih ediliyor. Enerjik genç sporculara özgürlük sağlayan eşofman altlarını rahatlıkla bir Lacoste çocuk sweatshirt ile kombinleyebilirsiniz.',
         style: TextStyle(height: 1.5, fontStyle: FontStyle.italic),
       ),
     );
@@ -274,7 +275,7 @@ class ColorAndSize extends StatelessWidget {
                 text: "Beden\n",
               ),
               TextSpan(
-                text: "S",
+                text: "M",
                 style: Theme.of(context)
                     .textTheme
                     .headline5!

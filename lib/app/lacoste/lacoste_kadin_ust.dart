@@ -5,7 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kloti/app/lacoste_erkek.dart';
-
+import 'package:flutter_kloti/app/product_view_page.dart';
 
 class lacosteKadinUst extends StatelessWidget {
   lacosteKadinUst({Key? key}) : super(key: key);
@@ -43,12 +43,12 @@ class lacosteKadinUst extends StatelessWidget {
                         child: InkWell(
                           splashColor: Colors.white54,
                           onTap: () {
-                            /* Navigator.push(
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const lacosteKadinAyakkabi()),
-                            );*/
+                                      const ProductViewPage()),
+                            );
                           },
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
