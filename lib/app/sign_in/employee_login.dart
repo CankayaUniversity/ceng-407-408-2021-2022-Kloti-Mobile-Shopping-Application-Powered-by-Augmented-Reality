@@ -1,50 +1,30 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:flutter_kloti/app/forgotpass.dart';
-import 'package:flutter_kloti/app/home_page.dart';
-import 'package:flutter_kloti/app/model/user_model.dart';
-import 'package:flutter_kloti/app/sign_in/employee_login.dart';
-import 'package:flutter_kloti/app/sign_in/sign.dart';
+import 'package:flutter_kloti/app/employeehomepage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+class EmployeeLogin extends StatefulWidget {
+  EmployeeLogin({Key? key}) : super(key: key);
 
-
-
-class MyLogin extends StatefulWidget {
-  const MyLogin({Key? key}) : super(key: key);
-
-  
-  
-   
   @override
-  State<MyLogin> createState() => _MyLoginState();
+  State<EmployeeLogin> createState() => _EmployeeLoginState();
 }
 
-class _MyLoginState extends State<MyLogin> with ChangeNotifier{
-  final _auth=FirebaseAuth.instance;
+class _EmployeeLoginState extends State<EmployeeLogin> {
   final TextEditingController _emailController=TextEditingController();
   final TextEditingController _passwordController=TextEditingController();
-
-   UserM? userM;
- 
-
- 
-
-  final _formKey = GlobalKey<FormState>();
-
+   final _auth=FirebaseAuth.instance;
+final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-   
-   
     return Scaffold(
        
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.blue.shade900,
-        title: const Text('Giriş Yap'),
+        title: const Text('Çalışan Girişi'),
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -53,9 +33,7 @@ class _MyLoginState extends State<MyLogin> with ChangeNotifier{
         centerTitle: true,
       ),
       
-      body:
-         Container(
-        constraints: const BoxConstraints.expand(),
+      body: Container(constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -100,7 +78,7 @@ class _MyLoginState extends State<MyLogin> with ChangeNotifier{
                         textInputAction: TextInputAction.next,
                         autofocus: false,
                         decoration: InputDecoration(
-                   //       errorText: _userModel.emailHataMesaji,
+             
                           border: const OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(7.0)),
@@ -122,10 +100,10 @@ class _MyLoginState extends State<MyLogin> with ChangeNotifier{
                           return null;
                         },
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextFormField(
+                       const SizedBox(
+                height: 20,
+              ),
+                       TextFormField(
                       
                         textInputAction: TextInputAction.done,
                         obscureText: true,
@@ -154,19 +132,14 @@ class _MyLoginState extends State<MyLogin> with ChangeNotifier{
                         
                         
                       ),
-                    ],
-                  ),
-                ),
+            ],
               ),
-
-              const SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
+        ),
+      ),
+        ElevatedButton(
                 onPressed: (){
-                  signIn(_emailController.text, _passwordController.text);
-                },
-                   
+                     signIn(_emailController.text, _passwordController.text);
+                } ,
                 child: const SizedBox.square(
                   child: Text(
                     'Giriş Yap',
@@ -179,112 +152,23 @@ class _MyLoginState extends State<MyLogin> with ChangeNotifier{
                 ),
                 style: ElevatedButton.styleFrom(primary: Colors.blue),
               ),
-              const SizedBox(
-                height: 10,
-              ),
-                ElevatedButton(
-                onPressed: (){
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>  EmployeeLogin()),
-                  ); 
-                },
-                   
-                child: const SizedBox.square(
-                  child: Text(
-                    'Çalışan Olarak Giriş Yap',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(primary: Colors.blue),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-             
-             
-              TextButton(
-                onPressed: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>  ForgotPassPage()),
-                  ); 
-                },
-                child: Text(
-                  'Şifremi unuttum',
-                  style: TextStyle(
-                    color: Colors.blue.shade900,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-             
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Kloti hesabınız yok mu ?",
-                    style: TextStyle(
-                      color: Colors.blue.shade900,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignUpp()),
-                      );
-                    },
-                    child: const Text(
-                      'Şimdi oluşturun',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-               
             ],
-          ),
         ),
-      )
-      
-
-    );
+      ),
+      ),
+   );
   }
-  void signIn(String email,String password) async
+   void signIn(String email,String password) async
   {
     if(_formKey.currentState!.validate())
     {
       await _auth.signInWithEmailAndPassword(email: email, password: password).then((uid) => {
         Fluttertoast.showToast(msg: "Giriş Başarılı"),
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => AnaSayfa())),
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => EmployeeHomePage())),
       }).catchError((e)
       {
         Fluttertoast.showToast(msg: e!.toString());
       });
     }
   }
-
- 
 }
-
-  
-
- 

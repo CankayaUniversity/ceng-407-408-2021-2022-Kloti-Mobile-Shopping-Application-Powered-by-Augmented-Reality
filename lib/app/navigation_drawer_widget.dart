@@ -25,7 +25,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
      GoogleSignInAccount? googleSignInAccount;
    UserM loggedInUser =UserM();
-
+   
 
    @override
    void initState() {
@@ -54,10 +54,12 @@ import 'package:google_sign_in/google_sign_in.dart';
            children:  <Widget> [
               DrawerHeader(child: Row(
                children:   [
-                   const CircleAvatar(
-                   radius: 43,
+                    CircleAvatar(
+                   radius: 40,
                    backgroundColor: Colors.white,
                    child: CircleAvatar(
+                    radius: 30,
+                  child: Image.asset("assets/images/guestuser.png"),
                      backgroundColor: Colors.blue,
                     
                     
@@ -78,7 +80,7 @@ import 'package:google_sign_in/google_sign_in.dart';
                          
                               Text("${loggedInUser.email}",
                              style: const TextStyle(color: Colors.white),),
-                           
+                         
                         
                          ],
                        ),
@@ -146,4 +148,26 @@ import 'package:google_sign_in/google_sign_in.dart';
    //notifyListeners();
      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> MyLogin()));
    }
+   void  resim(){
+ 
+    StreamBuilder(stream:FirebaseFirestore.instance.collection("users").doc(loggedInUser.uid).collection("images").snapshots() ,builder: (BuildContext context,AsyncSnapshot snapshot)
+      {
+       
+       
+          return CircleAvatar(
+            child: Image.network(snapshot.data!,height: 300,fit: BoxFit.cover,),
+          );
+           
+           
+        
+        
+                 
+                  
+                   
+                  
+        }
+      );
+  
+  }
+
    } 

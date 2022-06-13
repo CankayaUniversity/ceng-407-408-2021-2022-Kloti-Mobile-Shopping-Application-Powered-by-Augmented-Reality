@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_kloti/app/home_page.dart';
 import 'package:flutter_kloti/app/model/user_model.dart';
 import 'package:flutter_kloti/app/show_images.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,7 +18,8 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPageState extends State<ProfilPage> {
-    final TextEditingController _emailController=TextEditingController();
+  
+    final TextEditingController? _emailController=TextEditingController();
   
     File? _image;
   final imagePicker =ImagePicker();
@@ -41,15 +43,7 @@ class _ProfilPageState extends State<ProfilPage> {
   await firebaseFirestore.collection("users").doc(widget.loggedInUser.uid).collection("images").add({'profilURL':downloadURL}).whenComplete(() => showSnackBar("Fotoğraf değiştirme başarılı :)", const Duration(seconds: 2)));
    
   }
-/* 
-  
-  void _kameradanFotoCek() async{
-   final pick =await imagePicker.pickImage(source: ImageSource.camera);
-    Navigator.of(context).pop();
-    setState(() {
-       _image=pick as File ;
-    });
-  } */
+
 
   void _galeridenResimSec() async{
    final pick =await imagePicker.pickImage(source: ImageSource.gallery);
@@ -94,7 +88,7 @@ class _ProfilPageState extends State<ProfilPage> {
                   onTap: (){
                     showModalBottomSheet(context: context, builder: (context){
                       return Container(
-                        height: 230,
+                        height: 180,
                         child: Column(
                           children:  [
                              
@@ -106,21 +100,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                 },
                                 
                                 ),
-                                 ListTile(
-                                leading: const Icon(Icons.image),
-                                title: const Text("Fotoğrafı yükle"),
-                                onTap: (){
-                                  if(_image!=null)
-                                  {
-                                  uploadImage();
-                                  }
-                                  else{
-                                    showSnackBar("Önce fotoğraf seçin", const Duration(milliseconds: 400));
-                                  }
                                
-                                },
-                                
-                                ),
                                  ListTile(
                                 leading: const Icon(Icons.image),
                                 title: const Text("Fotoğrafı göster"),
@@ -161,6 +141,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration:  InputDecoration(
                     labelText: "Emailiniz",
                     hintText: "${widget.loggedInUser.email}",
@@ -175,10 +156,17 @@ class _ProfilPageState extends State<ProfilPage> {
                   if(_image!=null)
                   {
                     uploadImage(); //Seçilen fotoyu Database e yükler
-                    uploadEmail();
+                    
                   }
-             
-
+                if(_emailController?.text !=null)
+                {
+                  uploadEmail();
+                }
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>  AnaSayfa()),
+                  );
                 },
                 
                 child: const SizedBox.square(
@@ -203,13 +191,16 @@ class _ProfilPageState extends State<ProfilPage> {
   }
 
   void uploadEmail() async{
-    FirebaseFirestore firebaseFirestore=FirebaseFirestore.instance;
+ 
+   FirebaseFirestore firebaseFirestore=FirebaseFirestore.instance;
 
 
-  await firebaseFirestore.collection("users").doc(widget.loggedInUser.uid).update({'email':_emailController.text}).whenComplete(() => showSnackBar("Email değiştirme başarılı :)", const Duration(seconds: 2)));
-   
+  await firebaseFirestore.collection("users").doc(widget.loggedInUser.uid).update({'email':_emailController!.text}).whenComplete(() => showSnackBar("Email değiştirme başarılı :)", const Duration(seconds: 2)));
+   user!.updateEmail(_emailController!.text);
+    
+  
   }
-
+    
   
  
 

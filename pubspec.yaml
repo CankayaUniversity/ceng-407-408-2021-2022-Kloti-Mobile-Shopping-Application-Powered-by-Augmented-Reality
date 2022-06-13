@@ -49,6 +49,10 @@ dependencies:
   flutter_facebook_login: ^3.0.0
   fluttertoast: ^8.0.9
   firebase_storage: ^10.2.17
+  google_maps_flutter: ^2.1.7
+  location: ^4.3.0
+  flutter_polyline_points: ^1.0.0
+  
 
 dev_dependencies:
   flutter_test:
